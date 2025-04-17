@@ -1,15 +1,17 @@
 class Solution(object):
     def isPalindrome(self, x):
-        if x < 0:
-            return False
+        if x < 0: return False
 
-        num = x
-        newNum = 0
+        divNum = 1
+        while x >= 10 * divNum:
+            divNum *= 10
 
-        while x > 0:
-            newNum = newNum * 10 + x % 10
-            x //= 10
+        while x:
+            if x % 10 != x // divNum: return False
 
-        return newNum == num
+            x = (x % divNum) // 10
+            divNum = divNum // 100
+
+        return True
 
         
