@@ -10,7 +10,6 @@ class Solution(object):
                 i += 1
             elif nums[i] == nums[i + 1]:
                 nums.pop(i)
-                # nums.append(nums[i])
                 total_loop -= 1
             else:
                 unique_count += 1
